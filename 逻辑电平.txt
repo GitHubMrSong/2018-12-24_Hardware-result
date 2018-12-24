@@ -1,0 +1,46 @@
+void Soap_Pump_On()
+{
+	SD_Enable = 1;
+	SD_Pump2_Enable = 0;/*共用线 高*/
+	SD_Pump2_Select = 1;
+	
+	SD_Pump3_Enable = 0;/*消毒泵关*/
+	SD_Pump3_Select = 1;
+
+	SD_Pump1_Enable = 1;/*肥皂泵开*/
+	SD_Pump1_Select = 0;
+
+}
+
+void Sterilize_Pump_On()
+{
+	SD_Enable = 1;
+	SD_Pump2_Enable = 0;/*共用线 高*/
+	SD_Pump2_Select = 1;
+	
+	SD_Pump1_Enable = 0;/*肥皂泵关*/
+	SD_Pump1_Select = 1;
+
+	SD_Pump3_Enable = 1;/*消毒泵开*/
+	SD_Pump3_Select = 0;
+}
+
+void Soap_Pump_Off()
+{
+	SD_Enable = 0;
+	SD_Pump2_Enable = 1;/*共用线 低*/
+	SD_Pump2_Select = 0;
+
+	SD_Pump1_Enable = 1;/*肥皂泵*/
+	SD_Pump1_Select = 0;
+}
+
+void Sterilize_Pump_Off()
+{
+	SD_Enable = 0;
+	SD_Pump2_Enable = 1;/*共用线 低*/
+	SD_Pump2_Select = 0;
+
+	SD_Pump3_Enable = 1;/*肥皂泵*/
+	SD_Pump3_Select = 0;
+}
